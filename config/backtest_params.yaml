@@ -1,0 +1,19 @@
+# configs/backtest_params.yaml
+
+portfolio:
+  initial_capital: 10000000.0  # $10M starting capital
+  base_currency: "USD"
+  max_gross_exposure: 2.0      # 200% gross (100% long, 100% short)
+  max_position_size: 0.15      # Max 15% of capital in a single asset
+
+frictions:
+  commission_bps: 0.5          # 0.5 basis points per trade
+  latency_ms: 10               # Simulated network/exchange latency
+  slippage_model: "VolumeShare" # Slippage scales with participation rate
+  impact_coefficient: 0.1
+
+regimes:
+  # Hidden Markov Model parameters
+  n_components: 3              # e.g., Bull, Bear, Sideways/Volatile
+  covariance_type: "full"
+  lookback_window: 252         # 1 trading year of daily data for macro regime

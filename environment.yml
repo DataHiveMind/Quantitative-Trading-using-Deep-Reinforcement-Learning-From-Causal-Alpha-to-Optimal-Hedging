@@ -1,0 +1,42 @@
+# environment.yml
+name: QuantsEnv
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  # Core Python
+  - python=3.10
+  - pip
+  
+  # Data Engineering & kdb+ Integration
+  - numpy>=1.24.0
+  - pandas>=2.0.0
+  - pyarrow>=12.0.0          # For the Parquet flat file wizard
+  - qpython>=2.0.0           # IPC bridge to query kdb+ from Python
+  
+  # Microstructure & C++ Bindings
+  - pybind11>=2.10.0         # To wrap the C++ matching engine
+  - cmake>=3.26.0            # For compiling the C++ engine
+  
+  # Deep Learning & RL Frameworks
+  - pytorch>=2.0.0
+  - torchaudio
+  - torchvision
+  - gymnasium>=0.28.0        # Modern replacement for OpenAI Gym
+  - stable-baselines3>=2.0.0 # Baseline DRL implementations (PPO, SAC)
+  - ray-rllib>=2.5.0         # For distributed multi-agent training
+  
+  # Causal Inference & Regime Detection
+  - dowhy>=0.9.0             # Structural causal models
+  - networkx>=3.1            # Causal graph generation
+  - hmmlearn>=0.3.0          # Hidden Markov Models for regime detection
+  
+  # MLOps & Experiment Tracking
+  - mlflow>=2.3.0
+  - psycopg2                 # If pointing MLflow to a PostgreSQL backend
+  
+  # Utilities
+  - pyyaml>=6.0
+  - jupyterlab>=4.0.0
+  - pytest>=7.3.1
