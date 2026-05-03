@@ -1,6 +1,6 @@
 # configs/mlflow_config.yaml
 
-experiment_name: "Nexus_SCRL_Main"
+experiment_name: "Quant_Trading_Main"
 tracking_uri: "file:./mlruns"   # Change to "http://<EC2-IP>:5000" for cloud tracking
 artifact_location: "./mlruns/artifacts"
 
